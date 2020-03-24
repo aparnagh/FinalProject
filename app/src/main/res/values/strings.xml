@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+
+    <string name="home">Home</string>
+    <string name="next">Next</string>
+    <string name="prev">Back</string>
+    <string name="strAgree">Strongly Agree</string>
+    <string name="agree">Agree</string>
+    <string name="neutral">Neutral</string>
+    <string name="disagree">Disagree</string>
+    <string name="strDisagree">Strongly Disagree</string>
+    <string name="q1">Question 1</string>
+    <string name="q2">Question 2</string>
+    <string name="q3">Question 3</string>
+    <string name="q4">Question 4</string>
+    <string name="q5">Question 5</string>
+    <string name="q6">Question 6</string>
+    <string name="q7">Question 7</string>
+    <string name="q8">Question 8</string>
+    <string name="q9">Question 9</string>
+    <string name="q10">Question 10</string>
+    <string name="q11">Question 11</string>
+    <string name="q12">Question 12</string>
+
+    <string name="Q1">I opened myself to all of my feelings, the good and the bad</string>
+    <string name="Q2">When something upsetting came up, I tried very hard to stop thinking about it</string>
+    <string name="Q3">I paid close attention to what I was thinking and feeling</string>
+    <string name="Q4">Most of the time, I was just going through the motions without paying much attention</string>
+    <string name="Q5">I carried myself through tough moments by seeing my life from a larger viewpoint</string>
+    <string name="Q6">I told myself that I shouldn\'t be thinking or feeling the way I was</string>
+    <string name="Q7">I was able to let negative feelings come and go without getting caught up in them</string>
+    <string name="Q8">When I had negative thoughts or feelings, it was very hard to see past them</string>
+    <string name="Q9">I was very in touch with what is important to me and my life</string>
+    <string name="Q10">I didn\'t usually have time to focus on the things that are really important to me</string>
+    <string name="Q11">Even when things got tough, I was still able to take steps toward what I value in life</string>
+    <string name="Q12">Getting upset left me stuck and inactive</string>
+</resources>
