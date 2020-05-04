@@ -3,15 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home2">
+    app:startDestination="@id/home">
     <fragment
         android:id="@+id/home"
         android:name="com.example.finalproject.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_home_to_q1"
+            android:id="@+id/action_home_to_q14"
             app:destination="@id/q1" />
+        <action
+            android:id="@+id/action_home_to_analytics"
+            app:destination="@id/analytics" />
     </fragment>
     <fragment
         android:id="@+id/q1"
@@ -21,6 +24,9 @@
         <action
             android:id="@+id/action_q1_to_q2"
             app:destination="@id/q2" />
+        <action
+            android:id="@+id/action_q1_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q2"
@@ -30,6 +36,12 @@
         <action
             android:id="@+id/action_q2_to_q3"
             app:destination="@id/q3" />
+        <action
+            android:id="@+id/action_q2_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_q2_to_q1"
+            app:destination="@id/q1" />
     </fragment>
     <fragment
         android:id="@+id/q3"
@@ -39,6 +51,12 @@
         <action
             android:id="@+id/action_q3_to_q4"
             app:destination="@id/q4" />
+        <action
+            android:id="@+id/action_q3_to_q2"
+            app:destination="@id/q2" />
+        <action
+            android:id="@+id/action_q3_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q4"
@@ -48,6 +66,12 @@
         <action
             android:id="@+id/action_q4_to_q5"
             app:destination="@id/q5" />
+        <action
+            android:id="@+id/action_q4_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_q4_to_q3"
+            app:destination="@id/q3" />
     </fragment>
     <fragment
         android:id="@+id/q5"
@@ -57,6 +81,12 @@
         <action
             android:id="@+id/action_q5_to_q6"
             app:destination="@id/q6" />
+        <action
+            android:id="@+id/action_q5_to_q4"
+            app:destination="@id/q4" />
+        <action
+            android:id="@+id/action_q5_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q6"
@@ -66,6 +96,12 @@
         <action
             android:id="@+id/action_q6_to_q7"
             app:destination="@id/q7" />
+        <action
+            android:id="@+id/action_q6_to_q5"
+            app:destination="@id/q5" />
+        <action
+            android:id="@+id/action_q6_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q7"
@@ -75,6 +111,12 @@
         <action
             android:id="@+id/action_q7_to_q8"
             app:destination="@id/q8" />
+        <action
+            android:id="@+id/action_q7_to_q6"
+            app:destination="@id/q6" />
+        <action
+            android:id="@+id/action_q7_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q8"
@@ -84,6 +126,12 @@
         <action
             android:id="@+id/action_q8_to_q9"
             app:destination="@id/q9" />
+        <action
+            android:id="@+id/action_q8_to_q7"
+            app:destination="@id/q7" />
+        <action
+            android:id="@+id/action_q8_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q9"
@@ -93,6 +141,12 @@
         <action
             android:id="@+id/action_q9_to_q10"
             app:destination="@id/q10" />
+        <action
+            android:id="@+id/action_q9_to_q8"
+            app:destination="@id/q8" />
+        <action
+            android:id="@+id/action_q9_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q10"
@@ -102,6 +156,12 @@
         <action
             android:id="@+id/action_q10_to_q11"
             app:destination="@id/q11" />
+        <action
+            android:id="@+id/action_q10_to_q9"
+            app:destination="@id/q9" />
+        <action
+            android:id="@+id/action_q10_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q11"
@@ -111,6 +171,12 @@
         <action
             android:id="@+id/action_q11_to_q12"
             app:destination="@id/q12" />
+        <action
+            android:id="@+id/action_q11_to_q10"
+            app:destination="@id/q10" />
+        <action
+            android:id="@+id/action_q11_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/q12"
@@ -123,6 +189,9 @@
         <action
             android:id="@+id/action_q12_to_home"
             app:destination="@id/home" />
+        <action
+            android:id="@+id/action_q12_to_q11"
+            app:destination="@id/q11" />
     </fragment>
     <fragment
         android:id="@+id/surveyProgress"
@@ -132,6 +201,19 @@
         <action
             android:id="@+id/action_surveyProgress_to_home"
             app:destination="@id/home" />
+        <action
+            android:id="@+id/action_surveyProgress_to_q1"
+            app:destination="@id/q1" />
     </fragment>
+    <fragment
+        android:id="@+id/analytics"
+        android:name="com.example.finalproject.analytics"
+        android:label="fragment_analytics"
+        tools:layout="@layout/fragment_analytics" >
+        <action
+            android:id="@+id/action_analytics_to_home"
+            app:destination="@id/home" />
+    </fragment>
+
 
 </navigation>
