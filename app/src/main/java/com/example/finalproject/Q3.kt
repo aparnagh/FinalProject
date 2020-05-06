@@ -1,5 +1,6 @@
 package com.example.finalproject
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -47,33 +48,53 @@ class Q3 : Fragment() {
             if(model!!.answers.value!!.numAnswers < 3) {
                 model!!.answers.value!!.numAnswers = 3
             }
+            resetButtons(view)
+            view!!.findViewById<Button>(R.id.strAgree_button3).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.agree_button3).setOnClickListener{
            if(model!!.answers.value!!.numAnswers < 3) {
                 model!!.answers.value!!.numAnswers = 3
             }
+            resetButtons(view)
+            view!!.findViewById<Button>(R.id.agree_button3).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.neutral_button3).setOnClickListener{
             if(model!!.answers.value!!.numAnswers < 3) {
                 model!!.answers.value!!.numAnswers = 3
             }
+            resetButtons(view)
+            view!!.findViewById<Button>(R.id.neutral_button3).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.dislike_button3).setOnClickListener{
             if(model!!.answers.value!!.numAnswers < 3) {
                 model!!.answers.value!!.numAnswers = 3
             }
+            resetButtons(view)
+            view!!.findViewById<Button>(R.id.dislike_button3).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.strDislike_button3).setOnClickListener{
             if(model!!.answers.value!!.numAnswers < 3) {
                 model!!.answers.value!!.numAnswers = 3
             }
+            resetButtons(view)
+            view!!.findViewById<Button>(R.id.strDislike_button3).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         return view
     }
+
+
+    private fun resetButtons(view: View){
+        view.findViewById<Button>(R.id.strAgree_button3).setBackgroundColor(Color.LTGRAY)
+        view.findViewById<Button>(R.id.agree_button3).setBackgroundColor(Color.LTGRAY)
+        view.findViewById<Button>(R.id.neutral_button3).setBackgroundColor(Color.LTGRAY)
+        view.findViewById<Button>(R.id.dislike_button3).setBackgroundColor(Color.LTGRAY)
+        view.findViewById<Button>(R.id.strDislike_button3).setBackgroundColor(Color.LTGRAY)
+    }
+
 
 }

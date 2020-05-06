@@ -47,7 +47,7 @@ class Q1 : Fragment() {
                 model!!.answers.value!!.numAnswers = 1
             }
             resetButtons(view)
-            view!!.findViewById<Button>(R.id.strAgree_button1).setBackgroundColor(Color.BLUE)
+            view!!.findViewById<Button>(R.id.strAgree_button1).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.agree_button1).setOnClickListener{
@@ -55,7 +55,7 @@ class Q1 : Fragment() {
                 model!!.answers.value!!.numAnswers = 1
             }
             resetButtons(view)
-            view!!.findViewById<Button>(R.id.agree_button1).setBackgroundColor(Color.BLUE)
+            view!!.findViewById<Button>(R.id.agree_button1).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.neutral_button1).setOnClickListener{
@@ -63,7 +63,7 @@ class Q1 : Fragment() {
                 model!!.answers.value!!.numAnswers = 1
             }
             resetButtons(view)
-            view!!.findViewById<Button>(R.id.neutral_button1).setBackgroundColor(Color.BLUE)
+            view!!.findViewById<Button>(R.id.neutral_button1).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.dislike_button1).setOnClickListener{
@@ -71,7 +71,7 @@ class Q1 : Fragment() {
                 model!!.answers.value!!.numAnswers = 1
             }
             resetButtons(view)
-            view!!.findViewById<Button>(R.id.dislike_button1).setBackgroundColor(Color.BLUE)
+            view!!.findViewById<Button>(R.id.dislike_button1).setBackgroundColor(Color.rgb(157,143,247))
         }
 
         view!!.findViewById<Button>(R.id.strDislike_button1).setOnClickListener{
@@ -79,7 +79,7 @@ class Q1 : Fragment() {
                 model!!.answers.value!!.numAnswers = 1
             }
             resetButtons(view)
-            view!!.findViewById<Button>(R.id.strDislike_button1).setBackgroundColor(Color.BLUE)
+            view!!.findViewById<Button>(R.id.strDislike_button1).setBackgroundColor(Color.rgb(157,143,247))
         }
         return view
 

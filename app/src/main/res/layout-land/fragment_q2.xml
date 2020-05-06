@@ -13,26 +13,26 @@ tools:context=".Q2">
         android:id="@+id/questionNo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="209dp"
+        android:layout_marginEnd="349dp"
         android:text="@string/q2"
         android:textColor="@color/text"
+        android:textSize="14sp"
         android:textStyle="bold"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/home2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/question2"
         android:layout_width="376dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="25dp"
         android:text="@string/Q2"
         android:textColor="@color/text"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/prev_button2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionNo2" />
 
@@ -40,10 +40,9 @@ tools:context=".Q2">
         android:id="@+id/strAgree_button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:background="@color/buttonColor"
         android:text="@string/strAgree"
         android:textSize="18sp"
-        android:background="@color/buttonColor"
         app:layout_constraintTop_toBottomOf="@+id/question2"
         tools:layout_editor_absoluteX="161dp" />
 
@@ -106,23 +105,23 @@ tools:context=".Q2">
         android:id="@+id/prev_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:text="@string/prev"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strDislike_button2" />
+        app:layout_constraintBottom_toBottomOf="@+id/next_button2"
+        app:layout_constraintEnd_toStartOf="@+id/next_button2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/next_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/next"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strDislike_button2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,13 +34,14 @@ class MyViewModel(application: Application): AndroidViewModel(application) {
             answers.value!!.date = getDateNow()
              answers.value!!.time = getCurrentTime()
             val post = answers.value!!
-            val postValues = post.toMap()
-
-            val childUpdates = HashMap<String, Any>()
-           // childUpdates["/locations/$key"] = postValues
-            childUpdates["/$date/$key"] = postValues
-
-            database.updateChildren(childUpdates)
+//            val postValues = post.toMap()
+//
+//            val childUpdates = HashMap<String, Any>()
+//           // childUpdates["/locations/$key"] = postValues
+//            childUpdates["/$date/$key"] = postValues
+//
+//            database.updateChildren(childUpdates)
+             database.child("$date").setValue(answers.value!!)
     }
 
     fun getDateNow(): String {

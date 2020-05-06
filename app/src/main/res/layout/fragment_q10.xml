@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/home_background"
     tools:context=".Q10">
 
     <TextView
@@ -15,6 +16,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:text="@string/q10"
+        android:textColor="@color/text"
+        android:textStyle="bold"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home10" />
@@ -27,7 +30,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="22dp"
         android:text="@string/Q10"
-        android:textColor="#121111"
+        android:textColor="@color/text"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +43,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/strAgree"
         android:textSize="18sp"
+        android:background="@color/buttonColor"
         app:layout_constraintTop_toBottomOf="@+id/question10"
         tools:layout_editor_absoluteX="161dp" />
 
@@ -50,6 +54,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/agree"
         android:textSize="18sp"
+        android:background="@color/buttonColor"
         app:layout_constraintTop_toBottomOf="@+id/strAgree_button10"
         tools:layout_editor_absoluteX="161dp" />
 
@@ -60,6 +65,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/neutral"
         android:textSize="18sp"
+        android:background="@color/buttonColor"
         app:layout_constraintTop_toBottomOf="@+id/agree_button10"
         tools:layout_editor_absoluteX="161dp" />
 
@@ -70,6 +76,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/disagree"
         android:textSize="18sp"
+        android:background="@color/buttonColor"
         app:layout_constraintTop_toBottomOf="@+id/neutral_button10"
         tools:layout_editor_absoluteX="161dp" />
 
@@ -80,6 +87,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/strDisagree"
         android:textSize="18sp"
+        android:background="@color/buttonColor"
         app:layout_constraintTop_toBottomOf="@+id/dislike_button10"
         tools:layout_editor_absoluteX="0dp" />
 

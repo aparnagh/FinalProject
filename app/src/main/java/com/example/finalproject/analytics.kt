@@ -15,6 +15,10 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.recyclerviewcard.*
+import java.lang.Math.round
+import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 /**
  * A simple [Fragment] subclass.
@@ -45,15 +49,12 @@ class analytics : Fragment() {
                 // Get Post object and use the values to update the UI
                 val items: ArrayList<SurveyResult> = ArrayList<SurveyResult>()
                 for (postSnapshot in dataSnapshot.getChildren()) {
-                   // var data = postSnapshot.getValue(SurveyResult::class.java)
-                   // items.add(data!!)
-                    var greatest = 0
-
-
+                    var data = postSnapshot.getValue(SurveyResult::class.java)
+                    items.add(data!!)
 
                 }
 
-                adapter.setMovies(items)
+                adapter.setSurvey(items)
             }
 
         })
@@ -65,16 +66,16 @@ class analytics : Fragment() {
 
     inner class SurveyListAdapter() :
         RecyclerView.Adapter<SurveyListAdapter.SurveyViewHolder>() {
-        private var movies = emptyList<SurveyResult>()
+        private var surveys = emptyList<SurveyResult>()
 
-        internal fun setMovies(movies: List<SurveyResult>) {
-            this.movies = movies
+        internal fun setSurvey(surveys: List<SurveyResult>) {
+            this.surveys = surveys
             notifyDataSetChanged()
         }
 
         override fun getItemCount(): Int {
 
-            return movies.size
+            return surveys.size
         }
 
 
@@ -89,13 +90,13 @@ class analytics : Fragment() {
         override fun onBindViewHolder(holder: SurveyViewHolder, position: Int) {
 
 
-            holder.view.findViewById<TextView>(R.id.week).text = "test"
+            holder.view.findViewById<TextView>(R.id.date).text = "Date: " + surveys[position].date
+            var percentage = (surveys[position].numAnswers/12.0)*100.0
 
-            holder.itemView.setOnClickListener() {
 
-                //
+           // Log.d("percent",(surveys[position].numAnswers / 12.0).toString())
+           holder.view.findViewById<TextView>(R.id.percent).text = "Percent: " + String.format("%.1f", percentage) + " %"
 
-            }
 
         }
 
