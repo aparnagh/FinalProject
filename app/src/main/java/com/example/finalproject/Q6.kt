@@ -16,14 +16,33 @@ import androidx.navigation.findNavController
  */
 class Q6 : Fragment() {
 
+    lateinit var model: MyViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
 
-        val model = activity?.let { ViewModelProviders.of(it).get(MyViewModel::class.java)}
+        model = ViewModelProviders.of(activity!!).get(MyViewModel::class.java)
         val view = inflater.inflate(R.layout.fragment_q6, container, false)
+
+        if(model!!.getNumAnswers() >= 6){
+            if(model!!.highlightAns[25]){
+                view!!.findViewById<Button>(R.id.strAgree_button6).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[26]){
+                view!!.findViewById<Button>(R.id.agree_button6).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[27]){
+                view!!.findViewById<Button>(R.id.neutral_button6).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[28]){
+                view!!.findViewById<Button>(R.id.dislike_button6).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[29]){
+                view!!.findViewById<Button>(R.id.strDislike_button6).setBackgroundColor(Color.rgb(157,143,247))
+            }
+        }
 
         view!!.findViewById<Button>(R.id.home6).setOnClickListener{
             view!!.findNavController().navigate(R.id.action_q6_to_home)
@@ -48,6 +67,7 @@ if(model!!.answers.value!!.numAnswers < 6) {
                 model!!.answers.value!!.numAnswers = 6
             }
             resetButtons(view)
+            setHighlight(1)
             view!!.findViewById<Button>(R.id.strAgree_button6).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -56,6 +76,7 @@ if(model!!.answers.value!!.numAnswers < 6) {
                 model!!.answers.value!!.numAnswers = 6
             }
             resetButtons(view)
+            setHighlight(2)
             view!!.findViewById<Button>(R.id.agree_button6).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -64,6 +85,7 @@ if(model!!.answers.value!!.numAnswers < 6) {
                 model!!.answers.value!!.numAnswers = 6
             }
             resetButtons(view)
+            setHighlight(3)
             view!!.findViewById<Button>(R.id.neutral_button6).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -72,6 +94,7 @@ if(model!!.answers.value!!.numAnswers < 6) {
                 model!!.answers.value!!.numAnswers = 6
             }
             resetButtons(view)
+            setHighlight(4)
             view!!.findViewById<Button>(R.id.dislike_button6).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -80,6 +103,7 @@ if(model!!.answers.value!!.numAnswers < 6) {
                 model!!.answers.value!!.numAnswers = 6
             }
             resetButtons(view)
+            setHighlight(5)
             view!!.findViewById<Button>(R.id.strDislike_button6).setBackgroundColor(Color.rgb(157,143,247))
         }
         return view
@@ -94,5 +118,43 @@ if(model!!.answers.value!!.numAnswers < 6) {
         view.findViewById<Button>(R.id.strDislike_button6).setBackgroundColor(Color.LTGRAY)
     }
 
+    private fun setHighlight(num: Int){
+
+        if(num == 1){
+            model!!.highlightAns[25] = true
+            model!!.highlightAns[26] = false
+            model!!.highlightAns[27] = false
+            model!!.highlightAns[28] = false
+            model!!.highlightAns[29] = false
+        }
+        else if(num == 2){
+            model!!.highlightAns[25] = false
+            model!!.highlightAns[26] = true
+            model!!.highlightAns[27] = false
+            model!!.highlightAns[28] = false
+            model!!.highlightAns[29] = false
+        }
+        else if(num == 3){
+            model!!.highlightAns[25] = false
+            model!!.highlightAns[26] = false
+            model!!.highlightAns[27] = true
+            model!!.highlightAns[28] = false
+            model!!.highlightAns[29] = false
+        }
+        else if(num == 4){
+            model!!.highlightAns[25] = false
+            model!!.highlightAns[26] = false
+            model!!.highlightAns[27] = false
+            model!!.highlightAns[28] = true
+            model!!.highlightAns[29] = false
+        }
+        else if(num == 5){
+            model!!.highlightAns[25] = false
+            model!!.highlightAns[26] = false
+            model!!.highlightAns[27] = false
+            model!!.highlightAns[28] = false
+            model!!.highlightAns[29] = true
+        }
+    }
 
 }

@@ -16,15 +16,14 @@ class MyViewModel(application: Application): AndroidViewModel(application) {
 
 
     var answers = MutableLiveData<SurveyResult>()
-    var numAnswers = 0
-    var answerNowChecked = false
     val database = Firebase.database.reference
     var date = ""
+    var highlightAns = BooleanArray(60)
 
     init {
-        answers.value = SurveyResult(0, "", 0)
-
+        answers.value = SurveyResult()
     }
+
 
     fun addToDB()
          {
@@ -44,6 +43,9 @@ class MyViewModel(application: Application): AndroidViewModel(application) {
              database.child("$date").setValue(answers.value!!)
     }
 
+    fun getNumAnswers(): Int{
+        return answers.value!!.numAnswers
+    }
     fun getDateNow(): String {
         date = LocalDate.now().toString()
         return LocalDate.now().toString()

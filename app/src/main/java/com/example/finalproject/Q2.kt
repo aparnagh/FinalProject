@@ -16,18 +16,34 @@ import androidx.navigation.findNavController
  */
 class Q2 : Fragment() {
 
+    lateinit var model: MyViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
 
-        val model = activity?.let { ViewModelProviders.of(it).get(MyViewModel::class.java)}
+        model = ViewModelProviders.of(activity!!).get(MyViewModel::class.java)
+
         val view = inflater.inflate(R.layout.fragment_q2, container, false)
 
-        //if(model!!.answers.value!!.numAnswers != 2){
-        //    view!!.findNavController().navigate(R.id.action_q2_to_q3)
-        //}
+        if(model!!.getNumAnswers() >= 2){
+            if(model!!.highlightAns[5]){
+                view!!.findViewById<Button>(R.id.strAgree_button2).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[6]){
+                view!!.findViewById<Button>(R.id.agree_button2).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[7]){
+                view!!.findViewById<Button>(R.id.neutral_button2).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[8]){
+                view!!.findViewById<Button>(R.id.dislike_button2).setBackgroundColor(Color.rgb(157,143,247))
+            }
+            else if(model!!.highlightAns[9]){
+                view!!.findViewById<Button>(R.id.strDislike_button2).setBackgroundColor(Color.rgb(157,143,247))
+            }
+        }
 
         view!!.findViewById<Button>(R.id.home2).setOnClickListener{
             view!!.findNavController().navigate(R.id.action_q2_to_home)
@@ -52,6 +68,7 @@ class Q2 : Fragment() {
                 model!!.answers.value!!.numAnswers = 2
             }
             resetButtons(view)
+            setHighlight(1)
             view!!.findViewById<Button>(R.id.strAgree_button2).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -60,6 +77,7 @@ class Q2 : Fragment() {
                 model!!.answers.value!!.numAnswers = 2
             }
             resetButtons(view)
+            setHighlight(2)
             view!!.findViewById<Button>(R.id.agree_button2).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -68,6 +86,7 @@ class Q2 : Fragment() {
                 model!!.answers.value!!.numAnswers = 2
             }
             resetButtons(view)
+            setHighlight(3)
             view!!.findViewById<Button>(R.id.neutral_button2).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -76,6 +95,7 @@ class Q2 : Fragment() {
                 model!!.answers.value!!.numAnswers = 2
             }
             resetButtons(view)
+            setHighlight(4)
             view!!.findViewById<Button>(R.id.dislike_button2).setBackgroundColor(Color.rgb(157,143,247))
         }
 
@@ -83,6 +103,7 @@ class Q2 : Fragment() {
             if(model!!.answers.value!!.numAnswers < 2) {
                 model!!.answers.value!!.numAnswers = 2
             }
+            setHighlight(5)
             resetButtons(view)
             view!!.findViewById<Button>(R.id.strDislike_button2).setBackgroundColor(Color.rgb(157,143,247))
         }
@@ -90,12 +111,52 @@ class Q2 : Fragment() {
         return view
     }
 
+
     private fun resetButtons(view: View){
         view.findViewById<Button>(R.id.strAgree_button2).setBackgroundColor(Color.LTGRAY)
         view.findViewById<Button>(R.id.agree_button2).setBackgroundColor(Color.LTGRAY)
         view.findViewById<Button>(R.id.neutral_button2).setBackgroundColor(Color.LTGRAY)
         view.findViewById<Button>(R.id.dislike_button2).setBackgroundColor(Color.LTGRAY)
         view.findViewById<Button>(R.id.strDislike_button2).setBackgroundColor(Color.LTGRAY)
+    }
+
+    private fun setHighlight(num: Int){
+
+        if(num == 1){
+            model!!.highlightAns[5] = true
+            model!!.highlightAns[6] = false
+            model!!.highlightAns[7] = false
+            model!!.highlightAns[8] = false
+            model!!.highlightAns[9] = false
+        }
+        else if(num == 2){
+            model!!.highlightAns[5] = false
+            model!!.highlightAns[6] = true
+            model!!.highlightAns[7] = false
+            model!!.highlightAns[8] = false
+            model!!.highlightAns[9] = false
+        }
+        else if(num == 3){
+            model!!.highlightAns[5] = false
+            model!!.highlightAns[6] = false
+            model!!.highlightAns[7] = true
+            model!!.highlightAns[8] = false
+            model!!.highlightAns[9] = false
+        }
+        else if(num == 4){
+            model!!.highlightAns[5] = false
+            model!!.highlightAns[6] = false
+            model!!.highlightAns[7] = false
+            model!!.highlightAns[8] = true
+            model!!.highlightAns[9] = false
+        }
+        else if(num == 5){
+            model!!.highlightAns[5] = false
+            model!!.highlightAns[6] = false
+            model!!.highlightAns[7] = false
+            model!!.highlightAns[8] = false
+            model!!.highlightAns[9] = true
+        }
     }
 
 }
